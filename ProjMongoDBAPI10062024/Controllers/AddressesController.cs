@@ -21,5 +21,20 @@ namespace ProjMongoDBAPI10062024.Controllers
         {
             return _addressService.Get();
         }
+
+        [HttpGet("{id:length(24)}", Name = "GetAddress")]
+        public ActionResult<Address> Get(string id)
+        {
+            return _addressService.Get(id);
+        }
+
+        [HttpPost]
+        public ActionResult<Address> Create(Address address)
+        {
+            _addressService.Create(address);
+            return CreatedAtRoute("GetAddress", new {id = address.Id}, ad);
+        }
+
+
     }
 }
