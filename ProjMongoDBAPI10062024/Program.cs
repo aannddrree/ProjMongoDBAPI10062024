@@ -11,9 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//Utilizar o Arquivo de configuração
-
-builder.Services.AddControllers();
+//Utilizar o Arquivo de configuração#####################################################
 
 builder.Services.Configure<ProjMongoDBAPIDataBaseSettings>(
                builder.Configuration.GetSection(nameof(ProjMongoDBAPIDataBaseSettings)));
@@ -24,6 +22,7 @@ builder.Services.AddSingleton<IProjMongoDBAPIDataBaseSettings>(sp =>
 builder.Services.AddSingleton<CustomerService>();
 builder.Services.AddSingleton<AddressService>();
 
+//#####################################################################################
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
